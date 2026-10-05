@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyzer · Password Strength Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body><div class="wrap">
+<header><div><h1>Analyzer</h1><div class="note">Password Strength Analyzer &amp; Security Suggestion Tool</div></div>
+<div class="badge">🔒 Analyzed in memory · never stored, logged or sent elsewhere</div></header>
+<nav id="nav" aria-label="Pages"></nav>
+<div class="grid">
+ <div class="s5 stack">
+  <div class="card"><h2>Live analyzer</h2>
+   <label for="pw" class="note">Type a demo password (not a real one)</label>
+   <div class="row"><input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="Try: Password123!"><button class="alt fit" id="eye" type="button" aria-pressed="false">Show</button></div>
+   <div class="meter" id="meter"><i></i><i></i><i></i><i></i><i></i></div>
+   <div class="big"><b id="score">0</b><span class="note">/ 100</span><em id="cls">—</em></div>
+   <div class="ctx"><div><label for="nm">First name</label><input id="nm" type="text" autocomplete="off"></div><div><label for="by">Birth year</label><input id="by" type="text" maxlength="4" autocomplete="off"></div><div><label for="og">College / company</label><input id="og" type="text" autocomplete="off"></div></div>
+   <p class="note">Optional context is compared locally and never saved.</p>
+   <div class="row"><button id="save" type="button">Add metadata to dashboard</button><span class="note" id="saved"></span></div></div>
+  <div class="card"><h2>Policy check</h2><span class="pol" id="pol">POLICY —</span><ul id="polf" style="margin-top:8px"><li>Min 12 characters, common-password and personal-info checks.</li></ul><p class="note">Policy pass ≠ strong password. They measure different things.</p></div>
+  <div class="card"><h2>Score breakdown</h2><div id="bd"></div></div>
+ </div>
+ <div class="s7 stack">
+  <div class="tiles" id="tiles"></div>
+  <div class="two">
+   <div class="card"><h2>Findings</h2><ul id="finds"><li>Type a password to see detected weaknesses.</li></ul></div>
+   <div class="card"><h2>Suggestions</h2><ul id="sugg"><li class="tip">Prefer long, unique passphrases over symbol-heavy short passwords.</li></ul></div>
+  </div>
+  <div class="card"><h2>Try these synthetic examples</h2><div class="flow" id="ex"></div><p class="note">Click one to fill the field. Scores are project-defined bands, not a universal standard.</p></div>
+ </div></div>
+</div><script src="js/common.js"></script><script src="js/analyzer.js"></script></body></html>

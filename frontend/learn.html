@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn · Password Strength Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body><div class="wrap">
+<header><div><h1>Learn</h1><div class="note">Password Strength Analyzer &amp; Security Suggestion Tool</div></div>
+<div class="badge">🔒 Analyzed in memory · never stored, logged or sent elsewhere</div></header>
+<nav id="nav" aria-label="Pages"></nav>
+<div class="grid">
+ <div class="card s7"><h2>10 password security rules</h2><ul class="rules">
+  <li><b>1. Be unique.</b> One password per account limits credential stuffing.</li><li><b>2. Go long.</b> Prefer 16+ characters or a passphrase.</li>
+  <li><b>3. Avoid personal facts.</b> Names and birth years are guessed first.</li><li><b>4. Skip common passwords.</b> Lists of them are public.</li>
+  <li><b>5. Never reuse.</b> One breach should not open every door.</li><li><b>6. Use a manager.</b> It creates and stores random passwords.</li>
+  <li><b>7. Turn on MFA.</b> A stolen password alone is not enough.</li><li><b>8. Never share.</b> No legitimate support asks for your password.</li>
+  <li><b>9. Beware phishing.</b> Check the address before typing.</li><li><b>10. Change after compromise.</b> Rotate on suspicion, not on a calendar.</li></ul></div>
+ <div class="card s5"><h2>Password vs passphrase</h2><p class="note" style="margin-top:0">Four random words are easier to remember and usually harder to guess than a short, symbol-filled password. Example only, do not reuse:</p><div class="gen" id="ex">—</div>
+  <p class="note" style="margin:0">Never use famous quotes or song lines; they are predictable.</p></div>
+ <div class="card s6"><h2>Plaintext vs hash</h2><div class="flow"><span>Password</span><i>→</i><span>+ random salt</span><i>→</i><span>slow hash (Argon2id, bcrypt, scrypt, PBKDF2)</span><i>→</i><span>stored hash</span></div>
+  <p class="note">Hashing is one-way verification; encryption is reversible. Fast hashes alone make offline guessing cheap. The salt makes identical passwords store differently. See <code>backend/services/hashing_demo.py</code> (synthetic demo only).</p></div>
+ <div class="card s6"><h2>Entropy and its limits</h2><p class="note" style="margin-top:0">Entropy ≈ L × log2(N), where L is length and N the character pool. It assumes random choice. <b>Password123!</b> looks diverse yet is highly predictable, so this tool combines entropy with pattern, common-password and context checks. Guess-resistance labels are educational estimates only.</p></div>
+ <div class="card s12"><h2>Password strength is one layer</h2><div class="layers">
+  <div><b>MFA</b>Blocks logins with a stolen password.</div><div><b>Secure hashing</b>Limits damage if the database leaks.</div>
+  <div><b>Rate limiting and lockout</b>Slows online guessing.</div><div><b>Session security</b>Protects accounts after login.</div>
+  <div><b>Phishing protection</b>A strong password can still be handed to a fake site.</div><div><b>Monitoring</b>Detects stuffing and unusual logins.</div></div></div></div>
+</div><script src="js/common.js"></script><script src="js/learn.js"></script></body></html>

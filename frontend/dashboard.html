@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · Password Strength Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head><body><div class="wrap">
+<header><div><h1>Dashboard</h1><div class="note">Password Strength Analyzer &amp; Security Suggestion Tool</div></div>
+<div class="badge">🔒 Analyzed in memory · never stored, logged or sent elsewhere</div></header>
+<nav id="nav" aria-label="Pages"></nav>
+<section class="kpis" id="kpis"></section>
+<div class="grid">
+ <div class="card s4"><h2>Strength distribution</h2><canvas id="c1"></canvas></div>
+ <div class="card s4"><h2>Score distribution</h2><canvas id="c2"></canvas></div>
+ <div class="card s4"><h2>Password length distribution</h2><canvas id="c3"></canvas></div>
+ <div class="card s7"><h2>Most common weakness types</h2><canvas id="c4"></canvas></div>
+ <div class="card s5"><h2>Pattern detection frequency</h2><canvas id="c5"></canvas></div>
+ <div class="card s7"><h2>Recent analyses (metadata only)</h2><table><thead><tr><th>ID</th><th>Time (UTC)</th><th>Score</th><th>Class</th><th>Length</th><th>Weaknesses</th></tr></thead><tbody id="recent"></tbody></table></div>
+ <div class="card s5"><h2>What this database stores</h2><ul>
+  <li class="good">analysis_id, score, classification</li><li class="good">password_length, unique_character_ratio</li><li class="good">weakness_count, created_at</li><li class="good">finding type, severity, description</li>
+  <li class="high">No password, no hash, no reversible form</li></ul>
+  <p class="note">Even hashes of user-submitted passwords add risk without helping analytics. Seed data on first run is synthetic.</p></div>
+</div>
+</div><script src="js/common.js"></script><script src="js/dashboard.js"></script></body></html>

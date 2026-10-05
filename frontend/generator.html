@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generator · Password Strength Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body><div class="wrap">
+<header><div><h1>Generator</h1><div class="note">Password Strength Analyzer &amp; Security Suggestion Tool</div></div>
+<div class="badge">🔒 Analyzed in memory · never stored, logged or sent elsewhere</div></header>
+<nav id="nav" aria-label="Pages"></nav>
+<div class="grid">
+ <div class="card s5"><h2>Generator options</h2>
+  <div class="row"><button type="button" class="alt" data-m="pw">Random password</button><button type="button" class="alt" data-m="pp">Passphrase</button></div>
+  <div id="pwopts"><div class="opts"><label for="len">Length</label><select id="len"><option>16</option><option selected>20</option><option>24</option></select></div>
+   <div class="opts"><label><input type="checkbox" id="u" checked>Uppercase</label><label><input type="checkbox" id="l" checked>Lowercase</label><label><input type="checkbox" id="d" checked>Numbers</label><label><input type="checkbox" id="s" checked>Symbols</label></div></div>
+  <div id="ppopts" hidden><div class="opts"><label for="words">Words</label><select id="words"><option>4</option><option selected>5</option><option>6</option></select></div></div>
+  <button id="go" type="button">Generate new</button>
+  <p class="note">Uses Python <code>secrets</code> (OS cryptographic randomness). The <code>random</code> module is predictable and unsuitable. Values are never stored.</p></div>
+ <div class="s7 stack"><div class="card"><h2 id="kind">Password</h2><div class="gen" id="out">—</div>
+  <div class="row"><button id="copy" class="alt" type="button">Copy</button><button id="hide" class="alt" type="button">Hide</button></div>
+  <div class="meter" id="meter"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="big"><b id="sc">0</b><span class="note">/ 100</span><em id="cl">—</em></div></div>
+  <div class="tiles"><div class="tile"><span>Length</span><b id="m1">—</b></div><div class="tile"><span>Entropy estimate</span><b id="m2">—</b></div><div class="tile"><span>Character types</span><b id="m3">—</b></div></div>
+  <div class="two"><div class="card"><h2>Analyzer verdict</h2><ul id="sg"></ul></div><div class="card"><h2>Policy</h2><span class="pol" id="m4">—</span><p class="note">Random output should pass; every result is re-checked by the same analyzer.</p></div></div></div>
+ <div class="card s6"><h2>Why generated beats invented</h2><p class="note" style="margin:0">People pick predictable patterns without noticing. A random 20-character password has no pattern to guess, so the entropy estimate is honest here, unlike for Password123!. Long random passphrases are the easier-to-remember alternative.</p></div>
+ <div class="card s6"><h2>After generating</h2><ul><li class="tip">Save it in a password manager, not a note or email.</li><li class="tip">Use it for one account only.</li><li class="tip">Turn on MFA for that account.</li><li class="tip">Treat demo values here as examples; do not reuse them.</li></ul></div></div>
+</div><script src="js/common.js"></script><script src="js/generator.js"></script></body></html>
