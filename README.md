@@ -7,7 +7,7 @@
 ---
 
 ## Table of Contents
-Overview · Problem · Objectives · Relevance · Features · Architecture · Tech Stack · Analysis · Scoring · Suggestions · Generator · Policy · Privacy · Installation · Usage · API · Testing · Results · Limitations · Future · Screenshots · Learning Outcomes · Disclaimer · Author
+Overview · Problem · Objectives · Relevance · Features · Architecture · Tech Stack · Analysis · Scoring · Suggestions · Generator · Policy · Privacy · Installation · Usage · API · Testing · Results · Limitations · Future · Learning Outcomes · Disclaimer · Author
 
 ---
 
@@ -277,17 +277,6 @@ Scores from the current build (synthetic inputs):
 - Organization-level aggregate reporting without collecting passwords
 - Split `password_analyzer.py` into separate detector, scoring and suggestion modules
 
-## Screenshots
-Store in `screenshots/` (full checklist in [docs/05_GitHub_and_Screenshots.md](docs/05_GitHub_and_Screenshots.md)). Use synthetic passwords only.
-
-| Screen | File |
-|---|---|
-| Analyzer, weak result | `screenshots/06_result_weak.png` |
-| Analyzer, very strong | `screenshots/09_result_very_strong.png` |
-| Dashboard | `screenshots/19_dashboard.png` |
-| Generator | `screenshots/17_generator.png` |
-| Tests | `screenshots/22_unit_tests.png` |
-
 ## Learning Outcomes
 - Why composition rules fail and what to measure instead
 - Entropy and its limits
@@ -300,4 +289,4 @@ Store in `screenshots/` (full checklist in [docs/05_GitHub_and_Screenshots.md](d
 This is an educational, defensive project. It contains no cracking, credential-testing or password-collection functionality. Use only synthetic passwords for demos. Do not type real passwords into any tool you do not control and trust. Scores are project-defined estimates, not guarantees.
 
 ## Author
-**[Your Name]** · [Your College] · [LinkedIn URL] · [GitHub URL]
+**Shikha** 
